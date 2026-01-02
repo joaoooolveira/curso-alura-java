@@ -6,14 +6,19 @@ public class WhileLoop {
 
         double avaliacaoFilme = 0;
         double mediaAvaliacao = 0;
+        int totalNotas = 0;
 
         while (avaliacaoFilme != -1) {
             System.out.println("Diga sua avaliação para o filme");
             avaliacaoFilme = whileScan.nextDouble();
-            mediaAvaliacao += avaliacaoFilme;
+
+            if(avaliacaoFilme != -1) {
+                mediaAvaliacao += avaliacaoFilme;
+                totalNotas++;
+            }
         }
 
-        System.out.println(String.format("Média de avaliação: %.1f", (mediaAvaliacao/3)));
+        System.out.println(String.format("Média de avaliação: %.1f", (mediaAvaliacao/totalNotas)));
 
         whileScan.close();
     }
