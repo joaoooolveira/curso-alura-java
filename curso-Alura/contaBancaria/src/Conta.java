@@ -7,9 +7,7 @@ public class Conta {
         String tipoConta = "Corrente";
         double saldoConta = 2500.00;
 
-        int opcao = 0;
-        double valorSaque = 0;
-        double valorDeposito = 0;
+
 
         String dadosIniciais = """
                 *********************************************
@@ -31,6 +29,10 @@ public class Conta {
                 3- Sacar valor
                 4- Sair
                 ***********************\n""";
+
+        int opcao = 0;
+        double valorSaque = 0;
+        double valorDeposito = 0;
 
         while (opcao != 4) {
             System.out.println(operacoes);
@@ -60,7 +62,8 @@ public class Conta {
                     break;
                 case (4):
                     break;
-
+                default:
+                    System.out.println("Digite um número válido.");
             }
         }
     }
