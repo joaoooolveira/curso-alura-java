@@ -45,7 +45,7 @@ public class Titulo {
     }
 
     public void exibeFichaTecnica() {
-        System.out.println("Nome do filme: " + nomeTitulo);
+        System.out.println("Título: " + nomeTitulo);
         System.out.println("Ano de lançamento: " + anoDeLancamento);
     }
 
