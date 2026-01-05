@@ -1,29 +1,28 @@
-import br.com.alura.screenmatch.modelos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
 public class Principal {
     static void main() {
-        Filme poderosoChefao = new Filme();
-        poderosoChefao.setNomeTitulo("O poderoso chefão");
-        poderosoChefao.setAnoDeLancamento(1970);
-        poderosoChefao.setDuracaoEmMinutos(180);
+        Filme oPoderosoChefao = new Filme();
+        oPoderosoChefao.setNomeTitulo("O poderoso chefão");
+        oPoderosoChefao.setAnoDeLancamento(1970);
+        oPoderosoChefao.setDuracaoEmMinutos(180);
 
-        poderosoChefao.exibeFichaTecnica();
-        System.out.println("Duração do filme: " + poderosoChefao.getDuracaoEmMinutos());
+        oPoderosoChefao.exibeFichaTecnica();
+        System.out.println("Duração do filme: " + oPoderosoChefao.getDuracaoEmMinutos());
 
-        poderosoChefao.avaliarTitulo(8);
-        poderosoChefao.avaliarTitulo(7);
-        poderosoChefao.avaliarTitulo(10);
+        oPoderosoChefao.avaliarTitulo(8);
+        oPoderosoChefao.avaliarTitulo(7);
+        oPoderosoChefao.avaliarTitulo(10);
 
-        System.out.println("Total de avaliações: " + poderosoChefao.getTotalDeAvaliacoes());
-        System.out.println(String.format("%.1f\n", poderosoChefao.returnMedias()));
+        System.out.println("Total de avaliações: " + oPoderosoChefao.getTotalDeAvaliacoes());
+        System.out.println(String.format("%.1f\n", oPoderosoChefao.returnMedias()));
 
-        Filme avatarCaminhoDaAgua = new Filme();
-
-        avatarCaminhoDaAgua.setNomeTitulo("Avatar: Caminho da Água");
-        avatarCaminhoDaAgua.setAnoDeLancamento(2022);
-        avatarCaminhoDaAgua.setDuracaoEmMinutos(200);
+        Filme avatarOCaminhoDaAgua = new Filme();
+        avatarOCaminhoDaAgua.setNomeTitulo("Avatar: O Caminho da Água");
+        avatarOCaminhoDaAgua.setAnoDeLancamento(2022);
+        avatarOCaminhoDaAgua.setDuracaoEmMinutos(200);
 
         Serie lost = new Serie();
         lost.setNomeTitulo("Lost");
@@ -35,10 +34,9 @@ public class Principal {
         System.out.println("Duração total da série: " + lost.getDuracaoEmMinutos());
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
-        calculadora.incluiTempo(poderosoChefao);
-        calculadora.incluiTempo(avatarCaminhoDaAgua);
-        calculadora.incluiTempo(lost);
-
+        calculadora.incluiTitulo(oPoderosoChefao);
+        calculadora.incluiTitulo(avatarOCaminhoDaAgua);
+        calculadora.incluiTitulo(lost);
         System.out.println(calculadora.getTempoTotal());
     }
 }

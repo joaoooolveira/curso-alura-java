@@ -8,7 +8,7 @@ public class Titulo {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
-    public String getNomeTitulo() {
+    public String getNomeFilme() {
         return nomeTitulo;
     }
 
