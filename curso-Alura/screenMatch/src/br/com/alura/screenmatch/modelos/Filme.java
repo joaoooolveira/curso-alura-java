@@ -8,6 +8,22 @@ public class Filme {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
+    public String getNomeFilme() {
+        return nomeFilme;
+    }
+
+    public int getAnoDeLancamento() {
+        return anoDeLancamento;
+    }
+
+    public boolean isIncluidoNoPlano() {
+        return incluidoNoPlano;
+    }
+
+    public int getDuracaoEmMinutos() {
+        return duracaoEmMinutos;
+    }
+
     public int getTotalDeAvaliacoes(){
         return totalDeAvaliacoes;
     }
@@ -20,8 +36,12 @@ public class Filme {
         this.anoDeLancamento = anoDeLancamento;
     }
 
-    public void setDuracaoEmMinuto(int duracaoEmMinutos){
+    public void setDuracaoEmMinutos(int duracaoEmMinutos){
         this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+
+    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+        this.incluidoNoPlano = incluidoNoPlano;
     }
 
     public void exibeFichaTecnica(){
