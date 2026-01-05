@@ -1,30 +1,44 @@
+import br.com.alura.screenmatch.modelos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
 public class Principal {
     static void main() {
-        Filme filme = new Filme();
-        filme.setNomeTitulo("O poderoso chefão");
-        filme.setAnoDeLancamento(1970);
-        filme.setDuracaoEmMinutos(180);
+        Filme poderosoChefao = new Filme();
+        poderosoChefao.setNomeTitulo("O poderoso chefão");
+        poderosoChefao.setAnoDeLancamento(1970);
+        poderosoChefao.setDuracaoEmMinutos(180);
 
-        filme.exibeFichaTecnica();
-        System.out.println("Duração do filme: " + filme.getDuracaoEmMinutos());
+        poderosoChefao.exibeFichaTecnica();
+        System.out.println("Duração do filme: " + poderosoChefao.getDuracaoEmMinutos());
 
-        filme.avaliarTitulo(8);
-        filme.avaliarTitulo(7);
-        filme.avaliarTitulo(10);
+        poderosoChefao.avaliarTitulo(8);
+        poderosoChefao.avaliarTitulo(7);
+        poderosoChefao.avaliarTitulo(10);
 
-        System.out.println("Total de avaliações: " + filme.getTotalDeAvaliacoes());
-        System.out.println(String.format("%.1f\n", filme.returnMedias()));
+        System.out.println("Total de avaliações: " + poderosoChefao.getTotalDeAvaliacoes());
+        System.out.println(String.format("%.1f\n", poderosoChefao.returnMedias()));
 
-        Serie serie = new Serie();
-        serie.setNomeTitulo("Lost");
-        serie.setAnoDeLancamento(2000);
-        serie.setTemporadasDaSerie(10);
-        serie.setEpisodiosPorTemporada(10);
-        serie.setMinutosPorEpisodio(50);
-        serie.exibeFichaTecnica();
-        System.out.println("Duração total da série: " + serie.getDuracaoEmMinutos());
+        Filme avatarCaminhoDaAgua = new Filme();
+
+        avatarCaminhoDaAgua.setNomeTitulo("Avatar: Caminho da Água");
+        avatarCaminhoDaAgua.setAnoDeLancamento(2022);
+        avatarCaminhoDaAgua.setDuracaoEmMinutos(200);
+
+        Serie lost = new Serie();
+        lost.setNomeTitulo("Lost");
+        lost.setAnoDeLancamento(2000);
+        lost.setTemporadasDaSerie(10);
+        lost.setEpisodiosPorTemporada(10);
+        lost.setMinutosPorEpisodio(50);
+        lost.exibeFichaTecnica();
+        System.out.println("Duração total da série: " + lost.getDuracaoEmMinutos());
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.incluiTempo(poderosoChefao);
+        calculadora.incluiTempo(avatarCaminhoDaAgua);
+        calculadora.incluiTempo(lost);
+
+        System.out.println(calculadora.getTempoTotal());
     }
 }
