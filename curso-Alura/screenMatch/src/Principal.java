@@ -4,9 +4,15 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     static void main() {
         Filme oPoderosoChefao = new Filme();
+        Filme avatarOCaminhoDaAgua = new Filme();
+        Serie lost = new Serie();
+        FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
+
         oPoderosoChefao.setNomeTitulo("O poderoso chefão");
         oPoderosoChefao.setAnoDeLancamento(1970);
         oPoderosoChefao.setDuracaoEmMinutos(180);
@@ -19,14 +25,15 @@ public class Principal {
         oPoderosoChefao.avaliarTitulo(10);
 
         System.out.println("Total de avaliações: " + oPoderosoChefao.getTotalDeAvaliacoes());
-        System.out.println(String.format("%.1f\n", oPoderosoChefao.returnMedias()));
+        System.out.println(String.format("%.1f", oPoderosoChefao.returnMedias()));
+        filtro.filtragem(oPoderosoChefao);
 
-        Filme avatarOCaminhoDaAgua = new Filme();
+        System.out.println();
+
         avatarOCaminhoDaAgua.setNomeTitulo("Avatar: O Caminho da Água");
         avatarOCaminhoDaAgua.setAnoDeLancamento(2022);
         avatarOCaminhoDaAgua.setDuracaoEmMinutos(200);
 
-        Serie lost = new Serie();
         lost.setNomeTitulo("Lost");
         lost.setAnoDeLancamento(2000);
         lost.setTemporadasDaSerie(10);
@@ -36,18 +43,32 @@ public class Principal {
         System.out.println("Duração total da série: " + lost.getDuracaoEmMinutos());
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+
         calculadora.incluiTitulo(oPoderosoChefao);
         calculadora.incluiTitulo(avatarOCaminhoDaAgua);
         calculadora.incluiTitulo(lost);
-        System.out.println(calculadora.getTempoTotal());
-
-        FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
-        filtro.filtragem(oPoderosoChefao);
 
         Episodio episodio = new Episodio();
         episodio.setNumeroDoEpisodio(1);
         episodio.setSerie(lost);
         episodio.setTotalDeVisualizacoes(300);
         filtro.filtragem(episodio);
+
+        var dogville = new Filme();
+        dogville.setNomeTitulo("Dogville");
+        dogville.setDuracaoEmMinutos(200);
+        dogville.setAnoDeLancamento(2003);
+        dogville.avaliarTitulo(8);
+
+        System.out.println("\nMinha Lista: ");
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(oPoderosoChefao);
+        listaDeFilmes.add(avatarOCaminhoDaAgua);
+        listaDeFilmes.add(dogville);
+
+        System.out.println("Quantidade de filmes: " + listaDeFilmes.size());
+        for (int i = 0; i < listaDeFilmes.size(); i++) {
+            System.out.println(listaDeFilmes.get(i).getNomeFilme());
+        }
     }
 }

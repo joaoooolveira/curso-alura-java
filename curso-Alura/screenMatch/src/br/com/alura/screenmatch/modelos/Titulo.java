@@ -57,4 +57,5 @@ public class Titulo {
     public double returnMedias() {
         return avaliacao / totalDeAvaliacoes;
     }
+
 }
