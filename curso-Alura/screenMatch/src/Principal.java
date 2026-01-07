@@ -1,4 +1,6 @@
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroDeRecomendacao;
+import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
@@ -38,5 +40,14 @@ public class Principal {
         calculadora.incluiTitulo(avatarOCaminhoDaAgua);
         calculadora.incluiTitulo(lost);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
+        filtro.filtragem(oPoderosoChefao);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumeroDoEpisodio(1);
+        episodio.setSerie(lost);
+        episodio.setTotalDeVisualizacoes(300);
+        filtro.filtragem(episodio);
     }
 }
