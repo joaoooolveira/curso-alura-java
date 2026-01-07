@@ -1,10 +1,12 @@
 import br.com.alura.reprodutorMusical.metodos.Audio;
+import br.com.alura.reprodutorMusical.metodos.FavoritasDoPublico;
 import br.com.alura.reprodutorMusical.metodos.Musica;
 import br.com.alura.reprodutorMusical.metodos.Podcast;
 
 public class Principal {
     static void main() {
-        Audio meuAudio= new Audio();
+        Audio meuAudio = new Audio();
+        FavoritasDoPublico favoritas = new FavoritasDoPublico();
         Musica FaroesteCaboclo = new Musica();
 
         FaroesteCaboclo.setTitulo("Faroeste Caboclo");
@@ -16,7 +18,7 @@ public class Principal {
             FaroesteCaboclo.Reproduzir();
         }
 
-        for (int i = 0; i < 115; i++) {
+        for (int i = 0; i < 570; i++) {
             FaroesteCaboclo.Curtir();
         }
 
@@ -25,6 +27,8 @@ public class Principal {
 //        System.out.println("Curtidas: " + FaroesteCaboclo.getCurtidas());
 //        System.out.println("Classificação: " + FaroesteCaboclo.getClassificacao());
         meuAudio.audioAvaliado(FaroesteCaboclo);
+        favoritas.incluirFavoritas(FaroesteCaboclo);
+
 
         System.out.println();
 
@@ -33,15 +37,16 @@ public class Principal {
         meuPodcast.setTitulo("BolhaDev");
         meuPodcast.setApresentadorPodcast("Marcus Mendes");
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 300; i++) {
             meuPodcast.Reproduzir();
         }
 
-        for (int i = 0; i < 45; i++) {
+        for (int i = 0; i < 230; i++) {
             meuPodcast.Curtir();
         }
 
         meuPodcast.fichaTecnicaPodcast();
         meuPodcast.audioAvaliado(meuPodcast);
+        favoritas.incluirFavoritas(meuPodcast);
     }
 }

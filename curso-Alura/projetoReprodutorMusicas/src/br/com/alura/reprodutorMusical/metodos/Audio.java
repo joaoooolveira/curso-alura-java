@@ -15,12 +15,12 @@ public class Audio {
     }
 
     public double classificacaoAudio(){
-        if(Totalcurtidas >= 5){
-            return this.classificacao = 5;
-        } else if(Totalcurtidas >= 3){
-            return this.classificacao = 3;
+        if(getCurtidas() >= 500){
+            return this.classificacao = 10;
+        } else if(getCurtidas() >= 300){
+            return this.classificacao = 7;
         } else {
-            return this.classificacao = 1;
+            return this.classificacao = 4;
         }
     }
 
