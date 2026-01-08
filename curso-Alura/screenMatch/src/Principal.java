@@ -8,13 +8,10 @@ import java.util.ArrayList;
 
 public class Principal {
     static void main() {
-        Filme oPoderosoChefao = new Filme("O poderoso chefão");
-        Filme avatarOCaminhoDaAgua = new Filme("Avatar: O caminho da água");
-        Serie lost = new Serie();
+
         FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
 
-//        oPoderosoChefao.setNomeTitulo("O poderoso chefão");
-        oPoderosoChefao.setAnoDeLancamento(1970);
+        Filme oPoderosoChefao = new Filme("O poderoso chefão", 1970);
         oPoderosoChefao.setDuracaoEmMinutos(180);
 
         oPoderosoChefao.exibeFichaTecnica();
@@ -30,12 +27,10 @@ public class Principal {
 
         System.out.println();
 
-//        avatarOCaminhoDaAgua.setNomeTitulo("Avatar: O Caminho da Água");
-        avatarOCaminhoDaAgua.setAnoDeLancamento(2022);
+        Filme avatarOCaminhoDaAgua = new Filme("Avatar: O caminho da água", 2022);
         avatarOCaminhoDaAgua.setDuracaoEmMinutos(200);
 
-        lost.setNomeTitulo("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost", 2000);
         lost.setTemporadasDaSerie(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
@@ -54,10 +49,8 @@ public class Principal {
         episodio.setTotalDeVisualizacoes(300);
         filtro.filtragem(episodio);
 
-        var dogville = new Filme("Dogville");
-//        dogville.setNomeTitulo("Dogville");
+        var dogville = new Filme("Dogville", 2003);
         dogville.setDuracaoEmMinutos(200);
-        dogville.setAnoDeLancamento(2003);
         dogville.avaliarTitulo(8);
 
         System.out.println("\nMinha Lista: ");

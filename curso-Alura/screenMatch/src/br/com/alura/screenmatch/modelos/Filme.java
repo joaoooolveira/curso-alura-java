@@ -5,8 +5,8 @@ import br.com.alura.screenmatch.calculos.avaliacaoDeTitulos;
 public class Filme extends Titulo implements avaliacaoDeTitulos {
     private String diretorDoFilme;
 
-    public Filme(String nome){
-        this.setNomeTitulo(nome);
+    public Filme(String nome, int anoDeLancamento){
+        super(nome, anoDeLancamento);
     }
 
     public String getDiretorDoFilme() {
