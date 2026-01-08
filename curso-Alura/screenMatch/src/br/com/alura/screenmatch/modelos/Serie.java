@@ -10,6 +10,10 @@ public class Serie extends Titulo{
         super(nome, anoDeLancamento);
     }
 
+    public String toString(){
+        return "Serie: " + getNomeTitulo() + "(" + getAnoDeLancamento() + ")";
+    }
+
     public int getTemporadasDaSerie() {
         return temporadasDaSerie;
     }

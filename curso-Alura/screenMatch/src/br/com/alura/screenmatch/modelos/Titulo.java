@@ -13,7 +13,7 @@ public class Titulo {
         this.anoDeLancamento = anoDeLancamento;
     }
 
-    public String getNomeFilme() {
+    public String getNomeTitulo() {
         return nomeTitulo;
     }
 
