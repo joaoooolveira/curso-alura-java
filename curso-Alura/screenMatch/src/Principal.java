@@ -42,11 +42,11 @@ public class Principal {
         lost.exibeFichaTecnica();
         System.out.println("Duração total da série: " + lost.getDuracaoEmMinutos());
 
-        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
-
-        calculadora.incluiTitulo(oPoderosoChefao);
-        calculadora.incluiTitulo(avatarOCaminhoDaAgua);
-        calculadora.incluiTitulo(lost);
+//        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+//
+//        calculadora.incluiTitulo(oPoderosoChefao);
+//        calculadora.incluiTitulo(avatarOCaminhoDaAgua);
+//        calculadora.incluiTitulo(lost);
 
         Episodio episodio = new Episodio();
         episodio.setNumeroDoEpisodio(1);
@@ -67,8 +67,10 @@ public class Principal {
         listaDeFilmes.add(dogville);
 
         System.out.println("Quantidade de filmes: " + listaDeFilmes.size());
-        for (int i = 0; i < listaDeFilmes.size(); i++) {
-            System.out.println(listaDeFilmes.get(i).getNomeFilme());
+        for (Filme listaDeFilme : listaDeFilmes){
+            System.out.println(listaDeFilme.getNomeFilme() + "(" + listaDeFilme.getAnoDeLancamento() + ")");
         }
+
+        System.out.println(listaDeFilmes.toString());
     }
 }
