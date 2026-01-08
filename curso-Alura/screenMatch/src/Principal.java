@@ -8,12 +8,12 @@ import java.util.ArrayList;
 
 public class Principal {
     static void main() {
-        Filme oPoderosoChefao = new Filme();
-        Filme avatarOCaminhoDaAgua = new Filme();
+        Filme oPoderosoChefao = new Filme("O poderoso chefão");
+        Filme avatarOCaminhoDaAgua = new Filme("Avatar: O caminho da água");
         Serie lost = new Serie();
         FiltroDeRecomendacao filtro = new FiltroDeRecomendacao();
 
-        oPoderosoChefao.setNomeTitulo("O poderoso chefão");
+//        oPoderosoChefao.setNomeTitulo("O poderoso chefão");
         oPoderosoChefao.setAnoDeLancamento(1970);
         oPoderosoChefao.setDuracaoEmMinutos(180);
 
@@ -30,7 +30,7 @@ public class Principal {
 
         System.out.println();
 
-        avatarOCaminhoDaAgua.setNomeTitulo("Avatar: O Caminho da Água");
+//        avatarOCaminhoDaAgua.setNomeTitulo("Avatar: O Caminho da Água");
         avatarOCaminhoDaAgua.setAnoDeLancamento(2022);
         avatarOCaminhoDaAgua.setDuracaoEmMinutos(200);
 
@@ -54,8 +54,8 @@ public class Principal {
         episodio.setTotalDeVisualizacoes(300);
         filtro.filtragem(episodio);
 
-        var dogville = new Filme();
-        dogville.setNomeTitulo("Dogville");
+        var dogville = new Filme("Dogville");
+//        dogville.setNomeTitulo("Dogville");
         dogville.setDuracaoEmMinutos(200);
         dogville.setAnoDeLancamento(2003);
         dogville.avaliarTitulo(8);
@@ -71,6 +71,6 @@ public class Principal {
             System.out.println(listaDeFilme.getNomeFilme() + "(" + listaDeFilme.getAnoDeLancamento() + ")");
         }
 
-        System.out.println(listaDeFilmes.toString());
+        System.out.println(listaDeFilmes);
     }
 }
