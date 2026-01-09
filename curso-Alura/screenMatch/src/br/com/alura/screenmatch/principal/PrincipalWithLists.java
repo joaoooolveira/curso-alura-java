@@ -6,6 +6,7 @@ import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalWithLists {
     static void main() {
@@ -26,7 +27,7 @@ public class PrincipalWithLists {
         listaDeAssistidos.add(dogville);
         listaDeAssistidos.add(lost);
         Collections.sort(listaDeAssistidos);
-
+        listaDeAssistidos.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
         for (Titulo titulosAssistidos : listaDeAssistidos){
             System.out.println(titulosAssistidos);
             if(titulosAssistidos instanceof Filme filme) {
@@ -43,5 +44,6 @@ public class PrincipalWithLists {
         //Ordena em ordem alfabética
         Collections.sort(buscarArtista);
         System.out.println(buscarArtista);
+
     }
 }

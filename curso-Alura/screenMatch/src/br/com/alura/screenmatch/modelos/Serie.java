@@ -11,7 +11,7 @@ public class Serie extends Titulo{
     }
 
     public String toString(){
-        return "Serie: " + getNomeTitulo() + "(" + getAnoDeLancamento() + ")";
+        return "Serie: " + this.getNomeTitulo() + "(" + this.getAnoDeLancamento() + ")";
     }
 
     public int getTemporadasDaSerie() {
