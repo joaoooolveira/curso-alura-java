@@ -5,6 +5,7 @@ import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalWithLists {
     static void main() {
@@ -24,6 +25,7 @@ public class PrincipalWithLists {
         listaDeAssistidos.add(avatarOCaminhoDaAgua);
         listaDeAssistidos.add(dogville);
         listaDeAssistidos.add(lost);
+        Collections.sort(listaDeAssistidos);
 
         for (Titulo titulosAssistidos : listaDeAssistidos){
             System.out.println(titulosAssistidos);
@@ -32,5 +34,14 @@ public class PrincipalWithLists {
                 System.out.println();
             }
         }
+
+        ArrayList<String> buscarArtista = new ArrayList<>();
+        buscarArtista.add("Adam Sandler");
+        buscarArtista.add("The rock");
+        buscarArtista.add("Chris Hemsworth");
+
+        //Ordena em ordem alfabética
+        Collections.sort(buscarArtista);
+        System.out.println(buscarArtista);
     }
 }
