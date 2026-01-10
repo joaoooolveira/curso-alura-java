@@ -1,20 +1,16 @@
 import br.com.alura.modelos.Cartao;
 import br.com.alura.modelos.Produtos;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Principal {
     static void main() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Digite o limite do seu cartão: ");
-        double limiteCartao = sc.nextDouble();
-        Cartao cartao = new Cartao(limiteCartao);
+        Cartao cartao = new Cartao(1000);
 
         List<Produtos> listaDeProdutos = new ArrayList<>();
+        System.out.println(String.format("Limite do cartão: R$%.2f", cartao.getLimiteCartao()));
 
         int i = 1;
         while(i != 0){
@@ -36,10 +32,10 @@ public class Principal {
             System.out.println("Deseja continuar comprando? se sim digite 1, se não digite 0");
             i = sc.nextInt();
 
-            System.out.println("\nLimite atual do cartão: " + cartao.getLimiteCartao());
+            System.out.println(String.format("\nLimite atual do cartão: R$%.2f", cartao.getLimiteCartao()));
             System.out.println();
         }
-
+        
         listaDeProdutos.sort(Comparator.comparing(Produtos::getValorProduto));
 
         for (Produtos listaDeProduto : listaDeProdutos) {

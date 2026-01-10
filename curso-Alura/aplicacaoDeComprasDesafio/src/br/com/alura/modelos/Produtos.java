@@ -1,6 +1,6 @@
 package br.com.alura.modelos;
 
-public class Produtos {
+public class Produtos{
     private String nomeProduto;
     private double valorProduto;
 
@@ -21,6 +21,7 @@ public class Produtos {
     public double getValorProduto() {
         return valorProduto;
     }
+
 
 
 }
