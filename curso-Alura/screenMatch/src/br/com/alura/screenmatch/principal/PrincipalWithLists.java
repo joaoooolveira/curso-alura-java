@@ -7,6 +7,7 @@ import br.com.alura.screenmatch.modelos.Titulo;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class PrincipalWithLists {
     static void main() {
@@ -21,7 +22,7 @@ public class PrincipalWithLists {
 
         Serie lost = new Serie("Lost", 2000);
 
-        ArrayList<Titulo> listaDeAssistidos = new ArrayList<>();
+        List<Titulo> listaDeAssistidos = new ArrayList<>();
         listaDeAssistidos.add(oPoderosoChefao);
         listaDeAssistidos.add(avatarOCaminhoDaAgua);
         listaDeAssistidos.add(dogville);
@@ -36,7 +37,7 @@ public class PrincipalWithLists {
             }
         }
 
-        ArrayList<String> buscarArtista = new ArrayList<>();
+        List<String> buscarArtista = new ArrayList<>();
         buscarArtista.add("Adam Sandler");
         buscarArtista.add("The rock");
         buscarArtista.add("Chris Hemsworth");
