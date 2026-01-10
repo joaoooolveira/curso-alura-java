@@ -1,5 +1,8 @@
 package br.com.alura.screenmatch.principal;
 
+import br.com.alura.screenmatch.modelos.Titulo;
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -13,7 +16,9 @@ public class PrincipalWithSearch {
         System.out.print("Digite um filme que deseja buscar: ");
         String buscaDeFilme = leitura.nextLine();
 
-        String endereco = "https://www.omdbapi.com/?t=" + buscaDeFilme + "&apikey=90aa8218";
+        String chaveAPI = "90aa8218";
+
+        String endereco = "https://www.omdbapi.com/?t=" + buscaDeFilme + "&apikey=" + chaveAPI;
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -21,6 +26,12 @@ public class PrincipalWithSearch {
                 .build();
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
+
+        String json = response.body();
+        System.out.println(json);
+
+        Gson gson = new Gson();
+        Titulo meuTitulo = gson.fromJson(json, Titulo.class);
+        System.out.println(meuTitulo.toString());
     }
 }
