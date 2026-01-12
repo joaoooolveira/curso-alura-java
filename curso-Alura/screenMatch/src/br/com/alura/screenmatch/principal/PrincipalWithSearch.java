@@ -74,5 +74,6 @@ public class PrincipalWithSearch {
 
         FileWriter escrita = new FileWriter("filmes.json");
         escrita.write(gson.toJson(listaDeTitulos));
+        escrita.close();
     }
 }
