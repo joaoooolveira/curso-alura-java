@@ -26,6 +26,7 @@ public class PrincipalWithSearch {
 
         Gson gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .setPrettyPrinting()
                 .create();
 
         while(!buscaDeFilme.equalsIgnoreCase("sair")) {
