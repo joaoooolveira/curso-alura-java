@@ -39,7 +39,13 @@ public class PrincipalWithSearch {
         TituloOMDB meuTituloOMDB = gson.fromJson(json, TituloOMDB.class);
         System.out.println(meuTituloOMDB);
 
-        Titulo meuTitulo = new Titulo(meuTituloOMDB);
-        System.out.println(meuTitulo);
+        try{
+            Titulo meuTitulo = new Titulo(meuTituloOMDB);
+            System.out.println(meuTitulo);
+        } catch(NumberFormatException e) {
+            System.out.println("Aconteceu um erro: ");
+            System.out.println(e.getMessage());
+        }
+
     }
 }
