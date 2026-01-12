@@ -13,50 +13,66 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PrincipalWithSearch {
     static void main() throws IOException, InterruptedException {
         Scanner leitura = new Scanner(System.in);
-        System.out.print("Digite um filme que deseja buscar: ");
-        String buscaDeFilme = leitura.nextLine();
+        String buscaDeFilme = "";
 
-        String chaveAPI = "90aa8218";
+        List<Titulo> listaDeTitulos = new ArrayList<>();
 
-        String endereco = "https://www.omdbapi.com/?t=" + buscaDeFilme.replace(" ", "-") + "&apikey=" + chaveAPI;
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();
 
-        try{
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(endereco))
-                    .build();
-            HttpResponse<String> response = client
-                    .send(request, HttpResponse.BodyHandlers.ofString());
+        while(!buscaDeFilme.equalsIgnoreCase("sair")) {
 
-            String json = response.body();
-            System.out.println(json);
+            System.out.print("Digite um filme que deseja buscar: ");
+            buscaDeFilme = leitura.nextLine();
 
-            Gson gson = new GsonBuilder()
-                    .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                    .create();
-            TituloOMDB meuTituloOMDB = gson.fromJson(json, TituloOMDB.class);
-            System.out.println(meuTituloOMDB);
+            if(buscaDeFilme.equalsIgnoreCase("sair")){
+                break;
+            }
 
-            Titulo meuTitulo = new Titulo(meuTituloOMDB);
-            System.out.println(meuTitulo);
+            String chaveAPI = "90aa8218";
 
-            FileWriter escrita = new FileWriter("filmes.txt");
-            escrita.write(meuTitulo.toString());
-            escrita.close();
+            String endereco = "https://www.omdbapi.com/?t=" + buscaDeFilme.replace(" ", "-") + "&apikey=" + chaveAPI;
 
-        } catch(NumberFormatException e) {
-            System.out.println("Aconteceu um erro: ");
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException ArgumentoInvalido){
-            System.out.println("Erro de argumento na busca, verifique o endereço");
-            System.out.println(ArgumentoInvalido.getMessage());
-        } catch (ErroDeConversaoDeAnoException e){
-            System.out.println(e.getMensagem());
+            try {
+                HttpClient client = HttpClient.newHttpClient();
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create(endereco))
+                        .build();
+                HttpResponse<String> response = client
+                        .send(request, HttpResponse.BodyHandlers.ofString());
+
+                String json = response.body();
+                System.out.println("Arquivo json: " + json + "\n");
+
+                TituloOMDB meuTituloOMDB = gson.fromJson(json, TituloOMDB.class);
+                System.out.println("Gson API OMDB: " + meuTituloOMDB + "\n");
+
+                Titulo meuTitulo = new Titulo(meuTituloOMDB);
+                System.out.println("Classe titulo: " + meuTitulo + "\n");
+
+                listaDeTitulos.add(meuTitulo);
+
+            } catch (NumberFormatException e) {
+                System.out.println("Aconteceu um erro: ");
+                System.out.println(e.getMessage());
+            } catch (IllegalArgumentException ArgumentoInvalido) {
+                System.out.println("Erro de argumento na busca, verifique o endereço");
+                System.out.println(ArgumentoInvalido.getMessage());
+            } catch (ErroDeConversaoDeAnoException e) {
+                System.out.println(e.getMensagem());
+            }
         }
+        System.out.println(listaDeTitulos);
+
+        FileWriter escrita = new FileWriter("filmes.json");
+        escrita.write(gson.toJson(listaDeTitulos));
     }
 }
