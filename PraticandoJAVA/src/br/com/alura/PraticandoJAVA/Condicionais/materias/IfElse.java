@@ -2,6 +2,7 @@ package br.com.alura.PraticandoJAVA.Condicionais.materias;
 
 import br.com.alura.PraticandoJAVA.Condicionais.metodos.MediaDeNotas;
 import br.com.alura.PraticandoJAVA.Condicionais.metodos.ParImpar;
+import br.com.alura.PraticandoJAVA.Condicionais.metodos.Senha;
 
 import java.util.Scanner;
 
@@ -18,7 +19,7 @@ public class IfElse {
         int numero = leitura.nextInt();
 
         ParImpar verificarNumero = new ParImpar(numero);
-        System.out.println(verificarNumero);
+        System.out.println(verificarNumero + "\n");
 
         //Julia é professora e precisa de um programa que ajude a determinar se um aluno foi aprovado na disciplina. A regra da escola é:
         //
@@ -35,6 +36,19 @@ public class IfElse {
         double nota3 = leitura.nextDouble();
 
         MediaDeNotas notas = new MediaDeNotas(nota1, nota2, nota3);
-        System.out.println(notas);
+        System.out.println(notas + "\n");
+
+        //Jéssica trabalha no setor de TI de uma empresa e precisa garantir a segurança dos acessos ao sistema interno.
+        //Os funcionários utilizam uma senha fixa para acessar suas contas, e o sistema deve verificar se a senha inserida está correta.
+        //
+        //Ajude Jéssica a criar um programa que, com base em uma senha pré-definida, por exemplo: 123456,
+        //verifique se o que o usuário digitou está correto ou não. O programa deve comparar
+        //a tentativa com a senha correta e exibir se o acesso foi permitido ou negado.
+        System.out.println("Exercício 3:");
+        System.out.print("Digite a senha: ");
+        String senha = leitura.next();
+
+        Senha verificacao = new Senha();
+        System.out.println(verificacao.verificarSenha(senha));
     }
 }
