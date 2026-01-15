@@ -5,6 +5,7 @@ import br.com.alura.PraticandoJAVA.Condicionais.metodos.ParImpar;
 import br.com.alura.PraticandoJAVA.Condicionais.metodos.Senha;
 
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class IfElse {
     public static void main(String[] args){
@@ -49,6 +50,25 @@ public class IfElse {
         String senha = leitura.next();
 
         Senha verificacao = new Senha();
-        System.out.println(verificacao.verificarSenha(senha));
+        System.out.println(verificacao.verificarSenha(senha) + "\n");
+
+        //Pedro está aprendendo Java e se deparou com um problema: ele precisa criar um programa que
+        //compare dois números inteiros fornecidos pelo usuário e informe qual é o maior ou se são iguais.
+        //Mas, ele está com dificuldades para implementar a lógica de comparação e exibir o resultado corretamente.
+        //
+        //Ajude Pedro a resolver esse problema! Crie um programa que solicite ao usuário dois números inteiros,
+        //compare-os e exiba uma mensagem indicando qual é o maior ou se ambos são iguais.
+        System.out.println("Exercício 4:");
+        System.out.println("Digite dois números e descubra o maior entre eles");
+        int num1 = leitura.nextInt();
+        int num2 = leitura.nextInt();
+
+        if(num1 > num2){
+            System.out.printf("O número %d é maior que %d", num1, num2);
+        } else if(num1 == num2){
+            System.out.println("Os dois números são iguais.");
+        } else {
+            System.out.printf("O número %d é maior que %d", num2, num1);
+        }
     }
 }
