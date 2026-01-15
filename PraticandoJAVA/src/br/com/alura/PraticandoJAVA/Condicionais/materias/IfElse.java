@@ -1,5 +1,6 @@
 package br.com.alura.PraticandoJAVA.Condicionais.materias;
 
+import br.com.alura.PraticandoJAVA.Condicionais.metodos.MediaDeNotas;
 import br.com.alura.PraticandoJAVA.Condicionais.metodos.ParImpar;
 
 import java.util.Scanner;
@@ -26,5 +27,14 @@ public class IfElse {
         //Se for abaixo de 5.0, está reprovado.
         //
         //Crie um programa que, a partir de uma variável media, exiba a situação do estudante conforme as regras da escola.
+        System.out.println("Exercício 2:");
+        System.out.println("Digite as notas do aluno: ");
+
+        double nota1 = leitura.nextDouble();
+        double nota2 = leitura.nextDouble();
+        double nota3 = leitura.nextDouble();
+
+        MediaDeNotas notas = new MediaDeNotas(nota1, nota2, nota3);
+        System.out.println(notas);
     }
 }
