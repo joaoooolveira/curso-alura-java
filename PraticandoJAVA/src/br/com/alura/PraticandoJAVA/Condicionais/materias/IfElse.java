@@ -1,5 +1,6 @@
 package br.com.alura.PraticandoJAVA.Condicionais.materias;
 
+import br.com.alura.PraticandoJAVA.Condicionais.metodos.Desconto;
 import br.com.alura.PraticandoJAVA.Condicionais.metodos.MediaDeNotas;
 import br.com.alura.PraticandoJAVA.Condicionais.metodos.ParImpar;
 import br.com.alura.PraticandoJAVA.Condicionais.metodos.Senha;
@@ -64,11 +65,32 @@ public class IfElse {
         int num2 = leitura.nextInt();
 
         if(num1 > num2){
-            System.out.printf("O número %d é maior que %d", num1, num2);
+            System.out.printf("O número %d é maior que %d\n", num1, num2);
         } else if(num1 == num2){
-            System.out.println("Os dois números são iguais.");
+            System.out.println("Os dois números são iguais.\n");
         } else {
-            System.out.printf("O número %d é maior que %d", num2, num1);
+            System.out.printf("O número %d é maior que %d\n", num2, num1);
+        }
+
+        //Marcos trabalha em uma loja e precisa verificar se um cliente tem direito a um desconto de 10% em sua compra.
+        // O desconto é aplicado apenas se o valor da compra for maior ou igual a R$ 100,00. Para isso,
+        // ele quer um programa que permita inserir o valor da compra e exiba se o desconto foi aplicado ou não,
+        // juntamente com o novo valor após o desconto, caso aplicável.
+        //
+        //Com base nesse cenário, crie um programa que receba o valor da compra
+        // e exiba uma mensagem informando se o desconto foi aplicado ou não.
+        System.out.println("Exercício 5:");
+        System.out.println("Digite o preço: ");
+        double preco = leitura.nextDouble();
+
+        Desconto desconto = new Desconto();
+        double novoPreco = desconto.verificandoDesconto(preco);
+        if(desconto.temDesconto(preco)){
+            System.out.println("Desconto de 10% aplicado!");
+            System.out.printf("Valor final: R$%.2f", novoPreco);
+        } else {
+            System.out.println("Nenhum desconto aplicado.");
+            System.out.printf("Valor final: R$%.2f", novoPreco);
         }
     }
 }
