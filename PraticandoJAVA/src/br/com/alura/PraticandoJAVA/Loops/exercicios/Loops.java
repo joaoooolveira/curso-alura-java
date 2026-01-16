@@ -18,8 +18,20 @@ public class Loops {
                 System.out.println("Subindo o degrau: " + i);
             }
         } else {
-            System.out.println("Digite um número válido.");
+            System.out.println("Digite um número válido.\n");
 
         }
+        System.out.println();
+
+        //João recebeu uma lista de valores representando as receitas de sua loja de roupas.
+        // Ele quer calcular a soma total dessas receitas para entender o desempenho financeiro semanal.
+
+        int[] valores = {10,20,30,40,50};
+        int soma = 0;
+
+        for (int i = 0; i < valores.length; i++) {
+             soma += valores[i];
+        }
+        System.out.println(soma + "\n");
     }
 }
