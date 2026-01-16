@@ -45,6 +45,18 @@ public class Loops {
 
             }
         }
-        System.out.println(somaPares);
+        System.out.println(somaPares + "\n");
+
+        //Pedro quer calcular o fatorial de um número. O fatorial de um número é o produto de todos os números inteiros positivos de 1 até o próprio número.
+        // Crie um programa que receba um número e calcule seu fatorial.
+        System.out.print("Digite o número para ver o fatorial dele: ");
+        int numFatorial = leitura.nextInt();
+        int fatorial = 1;
+
+        for (int i = 1; i <= numFatorial; i++) {
+            fatorial *= i;
+        }
+
+        System.out.println(fatorial);
     }
 }
