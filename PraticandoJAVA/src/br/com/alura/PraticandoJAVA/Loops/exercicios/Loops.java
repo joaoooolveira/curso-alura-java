@@ -57,6 +57,25 @@ public class Loops {
             fatorial *= i;
         }
 
-        System.out.println(fatorial);
+        System.out.println("Fatorial de " + numFatorial + " é: " + fatorial + "\n");
+
+        //Carlos tem uma lista de números e quer descobrir qual é o maior valor. Para isso, ele decidiu percorrer a lista comparando cada número
+        // com o maior encontrado até o momento. Crie um programa que receba uma lista de números e encontre o maior número.
+        int[] listaDeNumeros = new int[5];
+
+        System.out.println("Digite 5 números em ordem(com espaço) e descubra qual o maior:");
+        for (int i = 0; i < 5; i++) {
+            listaDeNumeros[i] = leitura.nextInt();
+        }
+
+        int maiorNumero = listaDeNumeros[0];
+
+        for (int i = 0; i < 5; i++) {
+            if(listaDeNumeros[i] > maiorNumero){
+                maiorNumero = listaDeNumeros[i];
+            }
+        }
+
+        System.out.println("O maior número é: " + maiorNumero);
     }
 }
