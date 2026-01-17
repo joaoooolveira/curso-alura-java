@@ -40,5 +40,22 @@ public class DateTime {
         long hora = tempoAteFinalizar.toHours();
         long minutos = tempoAteFinalizar.toMinutes() % 60;
         System.out.printf("Tempo até finalizar atividade: %02d:%02d%n%n", hora, minutos);
+
+        //Você é responsável pelos projetos em uma empresa de desenvolvimento de software.
+        // Para garantir que os prazos sejam cumpridos, você precisa calcular a data de entrega de cada
+        // projeto com base na data de início e no prazo estimado em dias.
+        //
+        //Você precisa criar um programa que:
+        //
+        //Receba uma data de início.
+        //Adicione o prazo em dias ao início do projeto.
+        //Exiba a data final formatada corretamente.
+        LocalDate dataDeInicioDoProjeto = LocalDate.of(2026, 1, 15);
+        LocalDate dataDeEntregaDoProjeto = dataDeInicioDoProjeto.plusDays(15);
+
+        DateTimeFormatter formatarDataDeEntrega = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String dataDeEntregaFormatada = dataDeEntregaDoProjeto.format(formatarDataDeEntrega);
+
+        System.out.println("Data de entrega do projeto: " + dataDeEntregaFormatada);
     }
 }
