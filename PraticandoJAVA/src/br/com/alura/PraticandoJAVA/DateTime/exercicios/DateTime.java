@@ -50,12 +50,32 @@ public class DateTime {
         //Receba uma data de início.
         //Adicione o prazo em dias ao início do projeto.
         //Exiba a data final formatada corretamente.
+        int diasParaEntregar = 15;
+
         LocalDate dataDeInicioDoProjeto = LocalDate.of(2026, 1, 15);
-        LocalDate dataDeEntregaDoProjeto = dataDeInicioDoProjeto.plusDays(15);
+        LocalDate dataDeEntregaDoProjeto = dataDeInicioDoProjeto.plusDays(diasParaEntregar);
 
         DateTimeFormatter formatarDataDeEntrega = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String dataDeEntregaFormatada = dataDeEntregaDoProjeto.format(formatarDataDeEntrega);
 
-        System.out.println("Data de entrega do projeto: " + dataDeEntregaFormatada);
+        System.out.println("Data de entrega do projeto: " + dataDeEntregaFormatada + "\n");
+
+        //Você trabalha no setor financeiro de uma empresa de serviços e é responsável por gerenciar
+        // o vencimento das faturas dos clientes. Em alguns casos, os clientes solicitam um adiamento da data de pagamento,
+        // e o sistema precisa calcular a nova data de vencimento com base na quantidade de meses adicionados.
+        //
+        //Crie um programa que:
+        //
+        //Receba uma data de vencimento original.
+        //Adicione um número de meses ao vencimento.
+        //A data ajustada deve ser exibida no formato dd-MM-yyyy.
+        int mesesDeAdiantamento = 1;
+        LocalDate dataDeVencimentoOriginal = LocalDate.of(2026, 3, 20);
+        LocalDate novaDataDeVencimento = dataDeVencimentoOriginal.plusMonths(mesesDeAdiantamento);
+
+        DateTimeFormatter formatarDataDeVencimento = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String novaDataDeVencimentoFormatada = novaDataDeVencimento.format(formatarDataDeVencimento);
+
+        System.out.println("Nova data de vencimento: " + novaDataDeVencimentoFormatada);
     }
 }
