@@ -3,6 +3,7 @@ package br.com.alura.PraticandoJAVA.DateTime.exercicios;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Date;
 
 public class DateTime {
     public static void main(String[] args){
@@ -109,5 +110,19 @@ public class DateTime {
             long diasDeDiferenca = ChronoUnit.DAYS.between(dataDoEvento, dataAtual);
             System.out.println("O evento aconteceu há " + diasDeDiferenca + " dias.\n");
         }
+
+        //Você trabalha em uma empresa de viagens internacionais e precisa de um sistema que exiba o horário atual em diferentes países.
+        // Como a empresa tem clientes na Europa, o sistema deve ser capaz de mostrar o horário atual na cidade de Lisboa,
+        // independente do fuso horário do computador onde o programa está rodando.
+        //
+        //Crie um programa que exiba o horário atual no fuso horário de Portugal.
+        // Utilize a classe ZonedDateTime para realizar a tarefa. Lembre-se de formatar a saída para exibir apenas
+        // horas, minutos e segundos.
+        ZoneId zoneId = ZoneId.of("Europe/Lisbon");
+        ZonedDateTime horarioAtualDePortugal = ZonedDateTime.now(zoneId);
+
+        DateTimeFormatter formatadorDeHora = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+        System.out.println("Horario em Portugal: " + horarioAtualDePortugal.format(formatadorDeHora));
     }
 }
