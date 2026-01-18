@@ -2,6 +2,7 @@ package br.com.alura.PraticandoJAVA.DateTime.exercicios;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class DateTime {
     public static void main(String[] args){
@@ -76,6 +77,37 @@ public class DateTime {
         DateTimeFormatter formatarDataDeVencimento = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String novaDataDeVencimentoFormatada = novaDataDeVencimento.format(formatarDataDeVencimento);
 
-        System.out.println("Nova data de vencimento: " + novaDataDeVencimentoFormatada);
+        System.out.println("Nova data de vencimento: " + novaDataDeVencimentoFormatada + "\n");
+
+        //Você trabalha em uma agência de turismo e é responsável pelo agendamento de eventos como passeios e excursões.
+        //Para garantir uma boa organização, o sistema precisa verificar se um evento já ocorreu ou ainda está
+        // por vir com base na data atual.
+        //
+        //Crie um programa que:
+        //
+        //Receba uma data de evento previamente cadastrada.
+        //Compare essa data com a data atual.
+        //Exiba a data do evento e a data atual no formato dd-MM-yyyy.
+        //Informe se o evento já ocorreu ou ainda está por vir.
+        LocalDate dataAtual = LocalDate.now();
+        int diaDoEvento = 23;
+        int mesDoEvento = 1;
+        int anoDoEvento = 2026;
+        LocalDate dataDoEvento = LocalDate.of(anoDoEvento, mesDoEvento, diaDoEvento);
+
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+        System.out.println("Data atual: " + dataAtual.format(formato));
+        System.out.println("Data do evento: " + dataDoEvento.format(formato));
+
+        if(dataDoEvento.isAfter(dataAtual)){
+            long diasDeDiferenca = ChronoUnit.DAYS.between(dataAtual, dataDoEvento);
+            System.out.println("O evento acontecerá em " + diasDeDiferenca + " dias!\n");
+        } else if(dataDoEvento.isEqual(dataAtual)){
+            System.out.println("O evento acontecerá hoje!\n");
+        } else {
+            long diasDeDiferenca = ChronoUnit.DAYS.between(dataDoEvento, dataAtual);
+            System.out.println("O evento aconteceu há " + diasDeDiferenca + " dias.\n");
+        }
     }
 }
