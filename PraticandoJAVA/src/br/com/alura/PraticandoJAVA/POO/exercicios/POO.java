@@ -1,6 +1,7 @@
 package br.com.alura.PraticandoJAVA.POO.exercicios;
 
 import br.com.alura.PraticandoJAVA.POO.metodos.Conta;
+import br.com.alura.PraticandoJAVA.POO.metodos.Estufa;
 import br.com.alura.PraticandoJAVA.POO.metodos.Livro;
 import br.com.alura.PraticandoJAVA.POO.metodos.Produto;
 
@@ -18,14 +19,14 @@ public class POO {
         //
         //Represente um produto com os atributos nome, preço e quantidade.
         //Implemente um método que mostre os dados formatados, garantindo que o preço seja exibido com duas casas decimais.
-//        System.out.println("Digite o nome, preço e quantidade do produto em estoque:");
-//        String nomeProduto = leitura.nextLine();
-//        double precoProduto = leitura.nextDouble();
-//        int quantidadeProduto = leitura.nextInt();
-//
-//        Produto produto = new Produto(nomeProduto, precoProduto, quantidadeProduto);
-//
-//        System.out.println(produto);
+        System.out.println("Digite o nome, preço e quantidade do produto em estoque:");
+        String nomeProduto = leitura.nextLine();
+        double precoProduto = leitura.nextDouble();
+        int quantidadeProduto = leitura.nextInt();
+
+        Produto produto = new Produto(nomeProduto, precoProduto, quantidadeProduto);
+
+        System.out.println(produto);
 
         //Imagine que você está criando um sistema de catalogação para uma biblioteca.
         // Seu objetivo é desenvolver uma estrutura que armazene dados de obras literárias e as exiba em um formato padronizado,
@@ -62,6 +63,29 @@ public class POO {
         conta.zerarSaldo();
         System.out.println("Conta zerada.");
         conta.exibirSaldo();
+
+        //Imagine que você faz parte de uma equipe de agricultura tecnológica responsável por monitorar estufas inteligentes.
+        // Cada setor possui sensores que coletam dados críticos para o crescimento das plantas.
+        // Seu desafio é desenvolver um sistema que não apenas registre a temperatura, mas também alerte quando as condições saírem do ideal,
+        // garantindo a saúde das culturas.
+        //
+        //Crie uma classe que:
+        //
+        //Possua os atributos local, indicando o setor monitorado, e temperatura atual, armazenando a última medição.
+        //Implemente um método que mostre:
+        //O local do sensor.
+        //A temperatura formatada com uma casa decimal.
+        //Um alerta se a temperatura ultrapassar 37.5ºC.
+        System.out.print("Digite o setor: ");
+        String setor = leitura.nextLine();
+
+        System.out.print("Digite a temperatura do " + setor + ": ");
+        double temperatura = leitura.nextDouble();
+
+        Estufa estufa = new Estufa(setor, temperatura);
+
+        System.out.println(estufa);
+        estufa.verificarTemperatura();
     }
 
 
