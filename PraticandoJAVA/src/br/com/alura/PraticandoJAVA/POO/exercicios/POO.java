@@ -2,6 +2,8 @@ package br.com.alura.PraticandoJAVA.POO.exercicios;
 
 import br.com.alura.PraticandoJAVA.POO.metodos.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class POO {
@@ -16,14 +18,14 @@ public class POO {
         //
         //Represente um produto com os atributos nome, preço e quantidade.
         //Implemente um método que mostre os dados formatados, garantindo que o preço seja exibido com duas casas decimais.
-        System.out.println("Digite o nome, preço e quantidade do produto em estoque:");
-        String nomeProduto = leitura.nextLine();
-        double precoProduto = Double.parseDouble(leitura.nextLine());
-        int quantidadeProduto = Integer.parseInt(leitura.nextLine());
-
-        Produto produto = new Produto(nomeProduto, precoProduto, quantidadeProduto);
-
-        System.out.println(produto);
+//        System.out.println("Digite o nome, preço e quantidade do produto em estoque:");
+//        String nomeProduto = leitura.nextLine();
+//        double precoProduto = Double.parseDouble(leitura.nextLine());
+//        int quantidadeProduto = Integer.parseInt(leitura.nextLine());
+//
+//        Produto produto = new Produto(nomeProduto, precoProduto, quantidadeProduto);
+//
+//        System.out.println(produto);
 
         //Imagine que você está criando um sistema de catalogação para uma biblioteca.
         // Seu objetivo é desenvolver uma estrutura que armazene dados de obras literárias e as exiba em um formato padronizado,
@@ -33,14 +35,14 @@ public class POO {
         //
         //Defina uma classe com os atributos título, autor e páginas.
         //Implemente um método que use printf para mostrar os dados no formato: "[TÍTULO]" de [AUTOR] com [PÁGINAS] páginas.
-        System.out.println("Digite o título, autor e número de páginas:");
-        String tituloLivro = leitura.nextLine();
-        String autorLivro = leitura.nextLine();
-        int paginasLivro = Integer.parseInt(leitura.nextLine());
-
-        Livro livro = new Livro(tituloLivro, autorLivro, paginasLivro);
-
-        System.out.println(livro);
+//        System.out.println("Digite o título, autor e número de páginas:");
+//        String tituloLivro = leitura.nextLine();
+//        String autorLivro = leitura.nextLine();
+//        int paginasLivro = Integer.parseInt(leitura.nextLine());
+//
+//        Livro livro = new Livro(tituloLivro, autorLivro, paginasLivro);
+//
+//        System.out.println(livro);
 
         //Imagine que você está desenvolvendo um sistema de conta digital onde os usuários podem realizar transações financeiras.
         // Em determinadas situações, como encerramento de conta, é necessário zerar o saldo disponível.
@@ -50,17 +52,17 @@ public class POO {
         //Defina uma classe com o atributo saldo.
         //Implemente um método que redefine o valor do saldo para 0.0.
         //Implemente um método que mostra o saldo atual formatado.
-        System.out.print("Saldo da conta: ");
-        double saldo = Double.parseDouble(leitura.nextLine());
-
-        Conta conta = new Conta(saldo);
-
-        conta.exibirSaldo();
-
-        conta.zerarSaldo();
-        System.out.println("Conta zerada.");
-        conta.exibirSaldo();
-        System.out.println();
+//        System.out.print("Saldo da conta: ");
+//        double saldo = Double.parseDouble(leitura.nextLine());
+//
+//        Conta conta = new Conta(saldo);
+//
+//        conta.exibirSaldo();
+//
+//        conta.zerarSaldo();
+//        System.out.println("Conta zerada.");
+//        conta.exibirSaldo();
+//        System.out.println();
 
         //Imagine que você faz parte de uma equipe de agricultura tecnológica responsável por monitorar estufas inteligentes.
         // Cada setor possui sensores que coletam dados críticos para o crescimento das plantas.
@@ -74,16 +76,16 @@ public class POO {
         //O local do sensor.
         //A temperatura formatada com uma casa decimal.
         //Um alerta se a temperatura ultrapassar 37.5ºC.
-        System.out.print("Digite o setor: ");
-        String setor = leitura.nextLine();
-
-        System.out.print("Digite a temperatura do " + setor + ": ");
-        double temperatura = Double.parseDouble(leitura.nextLine());
-
-        Estufa estufa = new Estufa(setor, temperatura);
-
-        System.out.println(estufa);
-        estufa.verificarTemperatura();
+//        System.out.print("Digite o setor: ");
+//        String setor = leitura.nextLine();
+//
+//        System.out.print("Digite a temperatura do " + setor + ": ");
+//        double temperatura = Double.parseDouble(leitura.nextLine());
+//
+//        Estufa estufa = new Estufa(setor, temperatura);
+//
+//        System.out.println(estufa);
+//        estufa.verificarTemperatura();
 
         //Você está desenvolvendo um sistema de controle de colaboradores para uma empresa de tecnologia.
         // Às vezes, é necessário atualizar o cargo e o nível de acesso de um funcionário devido a promoções ou mudanças de departamento.
@@ -94,37 +96,52 @@ public class POO {
         //Represente um colaborador com os atributos nome, cargo e nivel de acesso.
         //Implemente um método que permita alterar o cargo e o nível de acesso.
         //Exiba no console as informações antes e depois da atualização.
-        System.out.println("Digite os dados do colaborador.");
+//        System.out.println("Digite os dados do colaborador.");
+//
+//        System.out.print("Nome: ");
+//        String nomeColaborador = leitura.nextLine();
+//
+//        System.out.print("Cargo: ");
+//        String cargoColaborador = leitura.nextLine();
+//
+//        System.out.print("Nível de Acesso: ");
+//        int nivelDeAcessoColaborador = Integer.parseInt(leitura.nextLine());
+//
+//        Colaboradores colaborador = new Colaboradores(nomeColaborador, cargoColaborador, nivelDeAcessoColaborador);
+//
+//        System.out.println();
+//        System.out.println("--- Antes da atualização ---");
+//        System.out.println(colaborador);
+//
+//        System.out.println();
+//        System.out.print("Novo cargo: ");
+//        String novoCargo = leitura.nextLine();
+//
+//        System.out.print("Novo nível de acesso: ");
+//        int novoNivelDeAcesso = Integer.parseInt(leitura.nextLine());
+//
+//        colaborador.promoverColaborador(novoCargo, novoNivelDeAcesso);
+//
+//        System.out.println();
+//        System.out.println("--- Após atualização ---");
+//        System.out.println(colaborador);
 
-        System.out.print("Nome: ");
-        String nomeColaborador = leitura.nextLine();
+        //Você está desenvolvendo um sistema de gerenciamento de tarefas pessoais para ajudar usuários a organizar suas atividades diárias.
+        // Cada tarefa precisa ser registrada com uma descrição e um status que indique se já foi concluída ou não.
+        // Seu objetivo é criar uma estrutura que armazene essas tarefas e permita visualizá-las.
+        //
+        //Crie um programa que:
+        //
+        //Defina uma classe com os atributos descrição e concluída.
+        //Implemente um método que mostre a descrição da tarefa e seu status.
+        //Crie uma lista de tarefas e exiba todas as tarefas cadastradas.
+        GerenciadorDeTarefas gerenciador = new GerenciadorDeTarefas();
 
-        System.out.print("Cargo: ");
-        String cargoColaborador = leitura.nextLine();
+        gerenciador.adicionarTarefas(new Tarefas("Estudar Java", true));
+        gerenciador.adicionarTarefas(new Tarefas("Ler um livro", false));
+        gerenciador.adicionarTarefas(new Tarefas("Treinar musculação", false));
 
-        System.out.print("Nível de Acesso: ");
-        int nivelDeAcessoColaborador = Integer.parseInt(leitura.nextLine());
-
-        Colaboradores colaborador = new Colaboradores(nomeColaborador, cargoColaborador, nivelDeAcessoColaborador);
-
-        System.out.println();
-        System.out.println("--- Antes da atualização ---");
-        System.out.println(colaborador);
-
-        System.out.println();
-        System.out.print("Novo cargo: ");
-        String novoCargo = leitura.nextLine();
-
-        System.out.print("Novo nível de acesso: ");
-        int novoNivelDeAcesso = Integer.parseInt(leitura.nextLine());
-
-        colaborador.promoverColaborador(novoCargo, novoNivelDeAcesso);
-
-        System.out.println();
-        System.out.println("--- Após atualização ---");
-        System.out.println(colaborador);
+        gerenciador.listarTarefas();
 
     }
-
-
 }
