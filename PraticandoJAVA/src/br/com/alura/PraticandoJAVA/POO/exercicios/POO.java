@@ -1,9 +1,6 @@
 package br.com.alura.PraticandoJAVA.POO.exercicios;
 
-import br.com.alura.PraticandoJAVA.POO.metodos.Conta;
-import br.com.alura.PraticandoJAVA.POO.metodos.Estufa;
-import br.com.alura.PraticandoJAVA.POO.metodos.Livro;
-import br.com.alura.PraticandoJAVA.POO.metodos.Produto;
+import br.com.alura.PraticandoJAVA.POO.metodos.*;
 
 import java.util.Scanner;
 
@@ -21,8 +18,8 @@ public class POO {
         //Implemente um método que mostre os dados formatados, garantindo que o preço seja exibido com duas casas decimais.
         System.out.println("Digite o nome, preço e quantidade do produto em estoque:");
         String nomeProduto = leitura.nextLine();
-        double precoProduto = leitura.nextDouble();
-        int quantidadeProduto = leitura.nextInt();
+        double precoProduto = Double.parseDouble(leitura.nextLine());
+        int quantidadeProduto = Integer.parseInt(leitura.nextLine());
 
         Produto produto = new Produto(nomeProduto, precoProduto, quantidadeProduto);
 
@@ -54,7 +51,7 @@ public class POO {
         //Implemente um método que redefine o valor do saldo para 0.0.
         //Implemente um método que mostra o saldo atual formatado.
         System.out.print("Saldo da conta: ");
-        double saldo = leitura.nextDouble();
+        double saldo = Double.parseDouble(leitura.nextLine());
 
         Conta conta = new Conta(saldo);
 
@@ -63,6 +60,7 @@ public class POO {
         conta.zerarSaldo();
         System.out.println("Conta zerada.");
         conta.exibirSaldo();
+        System.out.println();
 
         //Imagine que você faz parte de uma equipe de agricultura tecnológica responsável por monitorar estufas inteligentes.
         // Cada setor possui sensores que coletam dados críticos para o crescimento das plantas.
@@ -80,12 +78,52 @@ public class POO {
         String setor = leitura.nextLine();
 
         System.out.print("Digite a temperatura do " + setor + ": ");
-        double temperatura = leitura.nextDouble();
+        double temperatura = Double.parseDouble(leitura.nextLine());
 
         Estufa estufa = new Estufa(setor, temperatura);
 
         System.out.println(estufa);
         estufa.verificarTemperatura();
+
+        //Você está desenvolvendo um sistema de controle de colaboradores para uma empresa de tecnologia.
+        // Às vezes, é necessário atualizar o cargo e o nível de acesso de um funcionário devido a promoções ou mudanças de departamento.
+        // Seu programa deve permitir essas alterações e mostrar as informações atualizadas.
+        //
+        //Crie uma classe que:
+        //
+        //Represente um colaborador com os atributos nome, cargo e nivel de acesso.
+        //Implemente um método que permita alterar o cargo e o nível de acesso.
+        //Exiba no console as informações antes e depois da atualização.
+        System.out.println("Digite os dados do colaborador.");
+
+        System.out.print("Nome: ");
+        String nomeColaborador = leitura.nextLine();
+
+        System.out.print("Cargo: ");
+        String cargoColaborador = leitura.nextLine();
+
+        System.out.print("Nível de Acesso: ");
+        int nivelDeAcessoColaborador = Integer.parseInt(leitura.nextLine());
+
+        Colaboradores colaborador = new Colaboradores(nomeColaborador, cargoColaborador, nivelDeAcessoColaborador);
+
+        System.out.println();
+        System.out.println("--- Antes da atualização ---");
+        System.out.println(colaborador);
+
+        System.out.println();
+        System.out.print("Novo cargo: ");
+        String novoCargo = leitura.nextLine();
+
+        System.out.print("Novo nível de acesso: ");
+        int novoNivelDeAcesso = Integer.parseInt(leitura.nextLine());
+
+        colaborador.promoverColaborador(novoCargo, novoNivelDeAcesso);
+
+        System.out.println();
+        System.out.println("--- Após atualização ---");
+        System.out.println(colaborador);
+
     }
 
 

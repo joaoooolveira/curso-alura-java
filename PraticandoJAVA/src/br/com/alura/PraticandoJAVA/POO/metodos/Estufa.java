@@ -22,11 +22,11 @@ public class Estufa {
 
     public void verificarTemperatura(){
         if(temperatura > 37.5) {
-            System.out.println("Alerta: Temperatura acima do limite!");
+            System.out.println("Alerta: Temperatura acima do limite!\n");
         } else if(temperatura < 10.0) {
-            System.out.println("Alerta: Temperatura abaixo do limite!");
+            System.out.println("Alerta: Temperatura abaixo do limite!\n");
         } else {
-            System.out.println("Temperatura padrão.");
+            System.out.println("Temperatura padrão.\n");
         }
     }
 }

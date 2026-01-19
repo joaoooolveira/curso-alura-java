@@ -22,6 +22,6 @@ public class Livro {
     }
 
     public String toString(){
-        return "'%s' de %s com %d páginas".formatted(titulo, autor, paginas);
+        return "'%s' de %s com %d páginas\n".formatted(titulo, autor, paginas);
     }
 }
