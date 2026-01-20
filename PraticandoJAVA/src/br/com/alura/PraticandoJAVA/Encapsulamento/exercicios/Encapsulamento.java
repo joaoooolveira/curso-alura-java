@@ -1,9 +1,6 @@
 package br.com.alura.PraticandoJAVA.Encapsulamento.exercicios;
 
-import br.com.alura.PraticandoJAVA.Encapsulamento.metodos.Carro;
-import br.com.alura.PraticandoJAVA.Encapsulamento.metodos.Contato;
-import br.com.alura.PraticandoJAVA.Encapsulamento.metodos.ListaDeContatos;
-import br.com.alura.PraticandoJAVA.Encapsulamento.metodos.Produto;
+import br.com.alura.PraticandoJAVA.Encapsulamento.metodos.*;
 
 public class Encapsulamento {
     public static void main(String[] args){
@@ -52,5 +49,18 @@ public class Encapsulamento {
         Produto mouse = new Produto("Mouse Gamer", -55);
 
         System.out.println(mouse);
+
+        //Você está desenvolvendo um sistema de autenticação para um aplicativo bancário.
+        // Os usuários precisam ter total segurança de que suas senhas não podem ser alteradas sem autorização,
+        // mesmo que alguém tenha acesso temporário ao dispositivo.
+        //
+        //Crie uma classe que:
+        //
+        //Armazene com segurança a senha do usuário
+        //Permita alterar a senha apenas com a confirmação da senha atual
+        //Forneça feedback sobre o resultado da operação
+        Senha senha = new Senha("ABC1234");
+
+        senha.alterarSenha("ABC1234", "abcd123");
     }
 }

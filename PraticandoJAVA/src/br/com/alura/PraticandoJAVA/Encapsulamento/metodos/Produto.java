@@ -17,7 +17,7 @@ public class Produto {
     public String toString() {
         return """
                 Produto: %s
-                Preço: R$%.2f""".formatted(nome, preco);
+                Preço: R$%.2f\n""".formatted(nome, preco);
     }
 
     private void setPreco(double preco){
