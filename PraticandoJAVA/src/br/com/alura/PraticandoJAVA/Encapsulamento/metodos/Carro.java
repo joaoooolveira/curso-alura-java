@@ -20,7 +20,7 @@ public class Carro {
                 Veículo Cadastrado!
                 Modelo: %s
                 Placa: %s
-                Ano: %d""".formatted(modelo, placa, ano);
+                Ano: %d\n""".formatted(modelo, placa, ano);
     }
 
     private void validarCarro(String modelo, String placa, int ano){
