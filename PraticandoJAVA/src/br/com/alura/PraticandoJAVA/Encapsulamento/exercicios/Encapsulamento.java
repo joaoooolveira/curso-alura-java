@@ -62,5 +62,23 @@ public class Encapsulamento {
         Senha senha = new Senha("ABC1234");
 
         senha.alterarSenha("ABC1234", "abcd123");
+
+        //Você está desenvolvendo um sistema para um banco digital.
+        // Os clientes precisam confiar que suas transações serão seguras e que o sistema nunca permitirá que eles gastem mais do que possuem em conta.
+        // Seu desafio é garantir essa segurança nas operações financeiras de depositar e sacar.
+        //
+        //Crie uma classe que:
+        //
+        //Permita criar contas com titular e saldo inicial.
+        //Realize depósitos com valores positivos.
+        //Autorize saques apenas quando houver saldo suficiente.
+        //Exiba o saldo atualizado após cada operação.
+        Conta ana = new Conta("Ana");
+
+        ana.depositar(500);
+        ana.exibirSaldo();
+
+        ana.sacar(800);
+        ana.exibirSaldo();
     }
 }

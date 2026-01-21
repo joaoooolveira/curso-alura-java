@@ -13,18 +13,18 @@ public class Senha {
 
     public void alterarSenha(String senhaAtual, String novaSenha){
         if(senhaAtual == null || senhaAtual.isBlank()){
-            throw new IllegalArgumentException("Insira a senha atual.");
+            throw new IllegalArgumentException("Insira a senha atual.\n");
         }
-        
+
         if(senhaAtual.equals(this.senha)){
             if(novaSenha == null || novaSenha.isBlank()){
-                throw new IllegalArgumentException("Insira a senha para alteração.");
+                throw new IllegalArgumentException("Insira a senha para alteração.\n");
             }
 
             this.senha = novaSenha;
-            System.out.println("Senha alterada com sucesso!");
+            System.out.println("Senha alterada com sucesso!\n");
         } else {
-            System.out.println("Senha antiga incorreta.");
+            System.out.println("Senha antiga incorreta.\n");
         }
     }
 }
