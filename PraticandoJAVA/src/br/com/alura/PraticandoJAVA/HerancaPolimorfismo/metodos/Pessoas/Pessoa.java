@@ -1,6 +1,6 @@
 package br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pessoas;
 
-public class Pessoa {
+public abstract class Pessoa {
     private String nome;
     private int idade;
 
