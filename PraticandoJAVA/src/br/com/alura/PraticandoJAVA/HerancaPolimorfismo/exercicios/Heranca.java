@@ -6,6 +6,7 @@ import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Ebook;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Livro;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Midia;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Revista;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Colaboracao.Mensagem;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Email;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Notificacao;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Push;
@@ -143,5 +144,20 @@ public class Heranca {
         for(Pagamento pagamentos : listaPagamentos){
             pagamentos.confirmarPagamento();
         }
+        System.out.println();
+
+        //Você está desenvolvendo um sistema de comunicação para uma plataforma de colaboração em equipe.
+        // Esse sistema precisa lidar com diferentes cenários de envio de mensagens.
+        //
+        //Crie um programa que utilize sobrecarga de métodos para implementar as seguintes variações:
+        //
+        //Enviar uma mensagem padrão para todos os contatos, como Olá!.
+        //Enviar uma mensagem personalizada para um contato específico, como Bom dia para João.
+        //Reforçar uma mensagem enviando-a mais de uma vez para o mesmo contato, como: "Atenção!" para Maria, enviada duas vezes.
+        Mensagem notificacao = new Mensagem();
+
+        notificacao.enviarMensagem("Olá!");
+        notificacao.enviarMensagem("João", "Bom dia!");
+        notificacao.enviarMensagem("Maria", "Atenção", 2);
     }
 }
