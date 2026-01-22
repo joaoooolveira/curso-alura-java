@@ -7,6 +7,8 @@ import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Livro;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Midia;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Revista;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Colaboracao.Mensagem;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Entretenimento.Reserva;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Entretenimento.ReservaVip;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Email;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Notificacao;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Push;
@@ -159,5 +161,26 @@ public class Heranca {
         notificacao.enviarMensagem("Olá!");
         notificacao.enviarMensagem("João", "Bom dia!");
         notificacao.enviarMensagem("Maria", "Atenção", 2);
+        System.out.println();
+
+        //Imagine que você está desenvolvendo um sistema de gerenciamento para um sistema de entretenimento que oferece diversos serviços,
+        // desde restaurantes até áreas de lazer. O sistema precisa lidar com diferentes tipos de reservas,
+        // atendendo desde clientes casuais até os que possuem benefícios exclusivos.
+        //
+        //Crie um programa que:
+        //
+        //Tenha uma classe Reserva com três versões sobrecarregadas do método reservar():
+        //Uma sem parâmetros, que imprime: "Reserva realizada"
+        //Uma com data como parâmetro, que imprime: "Reserva feita para o dia [data]"
+        //Uma com data e quantidade de pessoas, que imprime: "Reserva feita para o dia [data] para [X] pessoas"
+        //Tenha uma subclasse ReservaVip, que herda de Reserva e sobrescreve o método reservar() sem parâmetros,
+        // imprimindo uma mensagem exclusiva: "Reserva VIP confirmada com atendimento exclusivo"
+        Reserva reserva = new Reserva();
+        ReservaVip vip = new ReservaVip();
+
+        reserva.reservar();
+        reserva.reservar("10/04");
+        reserva.reservar("12/04", 4);
+        vip.reservar();
     }
 }
