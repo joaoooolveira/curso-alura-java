@@ -10,6 +10,10 @@ import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Email;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Notificacao;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Push;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.SMS;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pagamento.BoletoBancario;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pagamento.CartaoCredito;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pagamento.Pagamento;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pagamento.Pix;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pessoas.AlunoPessoa;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pessoas.DocentePessoa;
 
@@ -111,6 +115,33 @@ public class Heranca {
         for (Notificacao notificacao : listaDeNotificacoes){
             notificacao.enviar();
             System.out.println();
+        }
+
+        //Você está desenvolvendo o núcleo de processamento para uma fintech.
+        // A startup precisa de um sistema que possa acomodar diferentes métodos de pagamento,
+        // cada um com suas particularidades de confirmação e regras de taxação. Seu desafio é criar uma estrutura que unifique o essencial,
+        // mas permita comportamentos específicos para cada forma de pagamento.
+        //
+        //Crie um programa que:
+        //
+        //Defina uma classe base Pagamento com o atributo valor.
+        //Cada subclasse (CartaoCredito, BoletoBancario e Pix) implementa sua própria lógica de confirmação e cálculo de taxas.
+        //Cartão: 3%.
+        //Boleto: 1%
+        //Pix: sem taxas
+        //Exiba a mensagem de confirmação no console e mostre o valor da taxa.
+        Pagamento cartao = new CartaoCredito(250);
+        Pagamento boleto = new BoletoBancario(500);
+        Pagamento pix = new Pix(300);
+
+        List<Pagamento> listaPagamentos = new ArrayList<>();
+
+        listaPagamentos.add(cartao);
+        listaPagamentos.add(boleto);
+        listaPagamentos.add(pix);
+
+        for(Pagamento pagamentos : listaPagamentos){
+            pagamentos.confirmarPagamento();
         }
     }
 }
