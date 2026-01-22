@@ -6,6 +6,10 @@ import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Ebook;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Livro;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Midia;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Revista;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Email;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Notificacao;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Push;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.SMS;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pessoas.AlunoPessoa;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pessoas.DocentePessoa;
 
@@ -81,6 +85,32 @@ public class Heranca {
 
         for (Midia m : midias){
             m.exibirInfo();
+        }
+        System.out.println();
+
+        //Você está desenvolvendo um sistema de comunicação para uma plataforma que precisa enviar alertas aos usuários de diferentes formas.
+        // Cada tipo de notificação tem suas particularidades: um e-mail exige um assunto e um corpo, um SMS somente o texto da mensagem,
+        // e uma notificação push deve conter um título e uma mensagem de texto.
+        //
+        //Crie um programa que:
+        //
+        //Defina uma classe base Notificacao com atributos destinatário e mensagem.
+        //Crie classes específicas (Email, SMS, Push) que herdem de Notificacao.
+        //Cada uma deve implementar o seu próprio método enviar(), exibindo como cada notificação é disparada.
+        // Lembre-se de sobrescrever o método utilizando a anotação @override.
+        Notificacao notificacao1 = new Email("cliente", "Promoção Especial!", "Aproveite nossos descontos essa semana.");
+        Notificacao notificacao2 = new SMS("(11) 12345-6789", "Sua fatura foi paga com sucesso.");
+        Notificacao notificacao3 = new Push("usuario", "Novidade!", "Você tem uma nova mensagem.");
+
+        List<Notificacao> listaDeNotificacoes = new ArrayList<>();
+
+        listaDeNotificacoes.add(notificacao1);
+        listaDeNotificacoes.add(notificacao2);
+        listaDeNotificacoes.add(notificacao3);
+
+        for (Notificacao notificacao : listaDeNotificacoes){
+            notificacao.enviar();
+            System.out.println();
         }
     }
 }
