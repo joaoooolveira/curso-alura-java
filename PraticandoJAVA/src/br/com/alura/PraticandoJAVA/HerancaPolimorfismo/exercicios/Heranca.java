@@ -7,6 +7,9 @@ import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Livro;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Midia;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Biblioteca.Revista;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Colaboracao.Mensagem;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.ContaBancaria.Deposito;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.ContaBancaria.OperacaoBancaria;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.ContaBancaria.Saque;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Entretenimento.Reserva;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Entretenimento.ReservaVip;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Mensagem.Email;
@@ -201,5 +204,25 @@ public class Heranca {
                 "Tudo funcionando conforme esperado."
         );
         doc.imprimir();
+        System.out.println();
+
+        //Imagine que você está desenvolvendo um sistema para um banco digital, onde todas as operações financeiras precisam
+        // ser tratadas de forma uniforme, mas cada uma com seu comportamento específico. O banco deseja que,
+        // independentemente do tipo de operação (depósito, saque, etc.), todas sigam a mesma estrutura básica para facilitar a manutenção e expansão do sistema.
+        //
+        //Crie um programa que:
+        //
+        //Tenha uma interface AcaoBancaria com o método executar(), que representa o contrato que toda operação bancária deve seguir.
+        //Tenha uma classe abstrata OperacaoBancaria, que implementa essa interface e contém:
+        //O atributo valor
+        //Um construtor para inicializar esse valor
+        //Tenha duas subclasses** que estendem OperacaoBancaria:
+        //Deposito: deve imprimir "Depósito de R$[valor] realizado"
+        //Saque: deve imprimir "Saque de R$[valor] realizado"
+        OperacaoBancaria deposito = new Deposito(200);
+        OperacaoBancaria saque = new Saque(50.5);
+
+        deposito.executar();
+        saque.executar();
     }
 }
