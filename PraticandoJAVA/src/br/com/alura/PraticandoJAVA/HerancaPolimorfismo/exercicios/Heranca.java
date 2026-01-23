@@ -19,6 +19,8 @@ import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pagamento.Pagamen
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pagamento.Pix;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pessoas.AlunoPessoa;
 import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Pessoas.DocentePessoa;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Relatorio.Imprimivel;
+import br.com.alura.PraticandoJAVA.HerancaPolimorfismo.metodos.Relatorio.Relatorio;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -182,5 +184,22 @@ public class Heranca {
         reserva.reservar("10/04");
         reserva.reservar("12/04", 4);
         vip.reservar();
+        System.out.println();
+
+        //Você está desenvolvendo um módulo de geração de documentos para um sistema corporativo.
+        // Esse módulo precisa oferecer uma forma de exibir diferentes tipos de relatórios, garantindo que todos sigam o mesmo padrão,
+        // independentemente de seu conteúdo específico.
+        //
+        //Crie um programa que:
+        //
+        //Defina uma interface Imprimivel com o método imprimir()
+        //Implemente uma classe Relatorio que siga este contrato
+        //Permita que o relatório seja criado com título e conteúdo
+        //Exiba as informações no console
+        Imprimivel doc = new Relatorio(
+                "Relatório 2025",
+                "Tudo funcionando conforme esperado."
+        );
+        doc.imprimir();
     }
 }
