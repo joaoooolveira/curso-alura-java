@@ -64,6 +64,18 @@ public class Strings {
             System.out.println("Arquivo não possui extensão.\n");
         }
 
+        //Laura está desenvolvendo um sistema de busca e precisa verificar se uma palavra específica está presente em um texto.
+        // Crie um programa que receba um texto e uma palavra, e exiba uma mensagem indicando se a palavra está presente no texto.
+        System.out.print("Digite o texto: ");
+        String textoVerificar = sc.nextLine();
 
+        System.out.print("Digite a palavra: ");
+        String palavraVerificar = sc.nextLine();
+
+        if(textoVerificar.contains(palavraVerificar)){
+            System.out.println("A palavra '" + palavraVerificar + "' está presente no texto.\n");
+        } else {
+            System.out.println("Essa palavra não está no texto.\n");
+        }
     }
 }
