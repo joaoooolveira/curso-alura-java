@@ -77,5 +77,12 @@ public class Strings {
         } else {
             System.out.println("Essa palavra não está no texto.\n");
         }
+
+        //Roberto está desenvolvendo um sistema de relatórios financeiros e precisa formatar valores monetários com duas casas decimais.
+        // Construa um programa que receba um valor monetário e exiba o valor formatado com duas casas decimais.
+        System.out.print("Digite o valor: ");
+        double valor = sc.nextDouble();
+
+        System.out.printf("Valor formatado: R$%.2f\n\n", valor);
     }
 }
