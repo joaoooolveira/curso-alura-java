@@ -50,6 +50,20 @@ public class Strings {
         System.out.println("Texto alterado: " + novoTexto);
         System.out.println();
 
-        
+        //Pedro está desenvolvendo um sistema de processamento de arquivos e precisa extrair o nome do arquivo sem a extensão.
+        // Crie um programa que receba o nome de um arquivo e exiba o nome sem a extensão.
+        System.out.print("Digite o nome do arquivo: ");
+        String arquivo = sc.nextLine();
+
+        int posicaoPonto = arquivo.indexOf(".");
+        if(posicaoPonto != -1){
+            String arquivoSemExtensao = arquivo.substring(0, posicaoPonto);
+            System.out.println("Nome do arquivo sem extensão: " + arquivoSemExtensao);
+            System.out.println();
+        } else {
+            System.out.println("Arquivo não possui extensão.\n");
+        }
+
+
     }
 }
