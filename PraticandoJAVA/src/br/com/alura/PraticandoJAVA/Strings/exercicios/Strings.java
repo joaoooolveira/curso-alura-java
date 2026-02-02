@@ -16,6 +16,18 @@ public class Strings {
         String nomeFormatado = nome.trim();
         System.out.println("Nome sem espaços: " + nomeFormatado + "\n");
 
+        //Carlos está desenvolvendo um sistema de relatórios e precisa padronizar o texto para que todos os títulos estejam em maiúsculas
+        // e as descrições em minúsculas. Faça um programa que receba um texto e exiba o texto em maiúsculas e o texto em minúsculas.
+        System.out.print("Digite o texto: ");
+        String texto = sc.nextLine();
+
+        String caixaAlta = texto.toUpperCase();
+        String caixaBaixa = texto.toLowerCase();
+
+        System.out.println("Texto em maiúsculas: " + caixaAlta);
+        System.out.println("Texto em minúsculas: " + caixaBaixa);
+        System.out.println();
+
         
     }
 }
