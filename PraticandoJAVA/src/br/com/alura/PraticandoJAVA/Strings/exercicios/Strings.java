@@ -28,6 +28,28 @@ public class Strings {
         System.out.println("Texto em minúsculas: " + caixaBaixa);
         System.out.println();
 
+        //Ana está desenvolvendo um sistema de edição de textos e precisa substituir uma palavra específica por outra em um texto. Crie um programa que:
+        //
+        //Receba um texto, uma palavra a ser substituída e uma nova palavra, exiba o texto com as substituições realizadas.
+        //Se a palavra a ser substituída não for encontrada no texto, o programa deve informar ao usuário que a palavra não foi encontrada e encerrar a execução.
+        System.out.print("Digite o texto: ");
+        String textoAntigo = sc.nextLine();
+
+        System.out.print("Digite a palavra a ser substituída: ");
+        String palavraAntiga = sc.nextLine();
+
+        if(!textoAntigo.contains(palavraAntiga)){
+            System.out.println("Palavra não encontrada.");
+            return;
+        }
+
+        System.out.print("Digite a nova palavra: ");
+        String novaPalavra = sc.nextLine();
+
+        String novoTexto = textoAntigo.replace(palavraAntiga, novaPalavra);
+        System.out.println("Texto alterado: " + novoTexto);
+        System.out.println();
+
         
     }
 }
